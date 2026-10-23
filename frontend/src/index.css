@@ -1,0 +1,214 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ================================
+   HireSense AI — Warm Peach Theme
+   ================================ */
+
+:root {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+
+  color: #1e1e1e;
+  background: #feebe4;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+html {
+  background: #feebe4;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(244, 81, 44, 0.08),
+      transparent 32%
+    ),
+    linear-gradient(135deg, #feebe4 0%, #fff7f3 48%, #ffd6c3 100%);
+
+  color: #1e1e1e;
+}
+
+/* ================================
+   Scrollbar
+   ================================ */
+
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f7e3da;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f4512c;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d93e20;
+}
+
+/* ================================
+   Cards
+   ================================ */
+
+.card {
+  @apply rounded-2xl border p-5 shadow-sm transition-all duration-200;
+  background: rgba(255, 255, 255, 0.9);
+  border-color: #ead8d0;
+  color: #1e1e1e;
+}
+
+.card:hover {
+  border-color: #f2b6a3;
+  box-shadow: 0 12px 30px rgba(116, 54, 34, 0.08);
+}
+
+/* ================================
+   Buttons
+   ================================ */
+
+.btn {
+  @apply rounded-xl px-4 py-2 font-semibold transition-all duration-200;
+}
+
+.btn-primary {
+  @apply btn text-white;
+  background: #f4512c;
+  box-shadow: 0 6px 16px rgba(244, 81, 44, 0.22);
+}
+
+.btn-primary:hover {
+  background: #ff6a3d;
+  transform: translateY(-1px);
+  box-shadow: 0 9px 20px rgba(244, 81, 44, 0.28);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ================================
+   Inputs
+   ================================ */
+
+.input {
+  @apply w-full rounded-xl px-3 py-2 outline-none transition-all duration-200;
+  background: #ffffff;
+  border: 1px solid #e5d2ca;
+  color: #1e1e1e;
+}
+
+.input::placeholder {
+  color: #99908c;
+}
+
+.input:focus {
+  border-color: #f4512c;
+  box-shadow: 0 0 0 3px rgba(244, 81, 44, 0.1);
+}
+
+/* ================================
+   Labels
+   ================================ */
+
+.label {
+  @apply text-sm font-medium;
+  color: #514944;
+}
+
+/* ================================
+   Tags
+   ================================ */
+
+.tag {
+  @apply inline-flex rounded-full px-2.5 py-1 text-xs font-medium;
+  background: #fff0ea;
+  border: 1px solid #f5c2b2;
+  color: #c63e21;
+}
+
+/* ================================
+   Secondary / Muted text
+   ================================ */
+
+.muted {
+  color: #756b66;
+}
+
+/* ================================
+   Links
+   ================================ */
+
+a {
+  color: inherit;
+}
+
+a:hover {
+  color: #f4512c;
+}
+
+/* ================================
+   Selection
+   ================================ */
+
+::selection {
+  background: #f4512c;
+  color: #ffffff;
+}
+
+/* ================================
+   Tables / generic surfaces
+   ================================ */
+
+table {
+  color: #1e1e1e;
+}
+
+thead {
+  background: #fff1eb;
+}
+
+tr {
+  border-color: #ead8d0;
+}
+
+/* ================================
+   Utility classes for new theme
+   ================================ */
+
+.peach-section {
+  background: #ffd6c3;
+}
+
+.soft-surface {
+  background: #fff7f3;
+}
+
+.orange-accent {
+  color: #f4512c;
+}
+
+.orange-bg {
+  background: #f4512c;
+}
+
+.dark-surface {
+  background: #1e1e1e;
+  color: #ffffff;
+}

@@ -1,0 +1,31 @@
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_DB: hiresense
+      POSTGRES_USER: hiresense
+      POSTGRES_PASSWORD: hiresense_dev
+    ports: ["5432:5432"]
+    volumes: ["pgdata:/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U hiresense -d hiresense"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+  backend:
+    build: ./backend
+    environment:
+      DATABASE_URL: postgresql+psycopg://hiresense:hiresense_dev@db:5432/hiresense
+      SECRET_KEY: change-this-for-real-use
+      CORS_ORIGINS: http://localhost:5173
+      USE_SENTENCE_TRANSFORMERS: "false"
+    ports: ["8000:8000"]
+    depends_on:
+      db:
+        condition: service_healthy
+  frontend:
+    build: ./frontend
+    ports: ["5173:80"]
+    depends_on: [backend]
+volumes:
+  pgdata:
