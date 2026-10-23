@@ -36,3 +36,6 @@ logs/
 .idea/
 .DS_Store
 Thumbs.db
+
+# Generated TypeScript files
+*.tsbuildinfo
